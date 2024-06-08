@@ -1,10 +1,10 @@
-import { Context } from "telegraf";
-import { FileCollection, FileMetadata } from '../../types/myFiles.js';
-import { code } from '../helpers.js'
+import { Context, Markup } from "telegraf";
+import { button } from "telegraf/markup";
 
-function buildMessage(myFiles: FileCollection, ctx: Context) {
-  const latestFiles: FileCollection = {'0': myFiles[1], '1': myFiles[2]}
-  ctx.sendMessage(code(JSON.stringify(latestFiles, null, 2), 'json'), { parse_mode: 'MarkdownV2' })
+function buildMessage(myFiles, ctx: Context) {
+  const latestFiles = myFiles.slice(0,3)
+  const buttons = latestFiles.map((el) => button.callback(`${el.title} — ${el.size.replace('&nbsp;', '')}`, `download-${el.file_id}`))
+  ctx.sendMessage('Доступные файлы', Markup.inlineKeyboard(buttons, { columns: 1 }))
 }
 
 export default buildMessage;

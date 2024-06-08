@@ -1,7 +1,7 @@
 /**
  * Interface describing the metadata of a file.
  */
-interface FileMetadata {
+export interface FileMetadata {
   /** Unique identifier for the file. */
   file_id: string;
 
@@ -18,7 +18,7 @@ interface FileMetadata {
   title: string;
 
   /** Identifier of the topic associated with the file. */
-  topic_id: string;
+  topic_id: number;
 
   /** Primary comment or description about the file. */
   comment: string;
@@ -144,6 +144,5 @@ interface FileMetadata {
 /**
  * Collection of file metadata objects indexed by a unique key.
  */
-export interface FileCollection extends Array {
-  [key: string]: FileMetadata;
-}
+// export interface FileCollection<FileMetadata> [];
+
