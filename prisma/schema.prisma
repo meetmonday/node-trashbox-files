@@ -20,3 +20,10 @@ model FileMetadata {
   file_url     String
   title        String
 }
+
+model TelegramFiles {
+  id Int @id @default(autoincrement())
+  file_name String
+  file_id String
+  file_unique_id String
+}

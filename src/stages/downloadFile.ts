@@ -1,10 +1,10 @@
-import { createWriteStream, existsSync, mkdirSync } from 'fs';
-import { dirname, resolve } from 'path';
-import { URL } from 'url';
-import { pipeline } from 'stream/promises';
+import { createWriteStream, existsSync, mkdirSync } from "fs";
+import { dirname, resolve } from "path";
+import { URL } from "url";
+import { pipeline } from "stream/promises";
 
 // Типы для fetch API
-import type { Response } from 'node-fetch';
+import type { Response } from "node-fetch";
 
 /**
  * Загружает файл по указанному URL и сохраняет его на диск.
@@ -14,9 +14,18 @@ import type { Response } from 'node-fetch';
  * @returns Путь к сохраненному файлу.
  * @throws Ошибка, если загрузка или сохранение файла не удались.
  */
-export async function downloadFile(url: string, outputDir: string, outputFilename?: string): Promise<string> {
+export async function downloadFile(
+  url: string,
+  outputDir: string,
+  outputFilename?: string
+): Promise<string> {
   // Создание полного пути для сохранения файла
-  const outputLocationPath = resolve(outputDir, outputFilename || new URL(url).pathname.split('/').pop() || 'downloaded_file');
+  const outputLocationPath = resolve(
+    outputDir,
+    outputFilename ||
+      new URL(url).pathname.split("/").pop() ||
+      "downloaded_file"
+  );
 
   try {
     // Проверяем, существует ли файл
