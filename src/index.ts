@@ -5,7 +5,7 @@ import sendFile from "./stages/sendFile.js";
 import { extractLink } from "./helpers.js";
 
 const localApi = process.env.BIG_FILES
-  ? { telegram: { apiRoot: "http://127.0.0.1:8081/" } }
+  ? { telegram: { apiRoot: process.env.LOCAL_API } }
   : {};
 
 const bot = new Telegraf(process.env.BOT_TOKEN!, localApi);
