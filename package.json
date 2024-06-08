@@ -1,0 +1,42 @@
+{
+  "name": "trashbox-files",
+  "version": "0.0.1",
+  "description": "experimental bot for downloading files from Trashbox.ru site",
+  "main": "./src/index.ts",
+  "type": "module",
+  "engines": {
+    "node": "20.x.x",
+    "npm": "10.x"
+  },
+  "scripts": {
+    "start": "tsc && node ./dist/index.js",
+    "dev": "tsc-watch -p ./tsconfig.json --onSuccess \"node -r dotenv/config ./dist/index.js\"",
+    "lint": "eslint ./src/*",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meetmonday/node-trashbox-files.git"
+  },
+  "author": "meetmonday",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/meetmonday/node-trashbox-files/issues"
+  },
+  "homepage": "https://github.com/meetmonday/node-trashbox-files#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.4.0",
+    "@types/eslint__js": "^8.42.3",
+    "@types/node": "^20.14.2",
+    "dotenv": "^16.4.5",
+    "eslint": "^9.4.0",
+    "globals": "^15.4.0",
+    "tsc-watch": "^6.2.0",
+    "typegram": "^5.2.0",
+    "typescript": "^5.4.5",
+    "typescript-eslint": "^7.12.0"
+  },
+  "dependencies": {
+    "telegraf": "^4.16.3"
+  }
+}
