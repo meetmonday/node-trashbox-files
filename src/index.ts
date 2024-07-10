@@ -3,6 +3,7 @@ import { callbackQuery } from "telegraf/filters";
 import fetchMyFiles from "./stages/fetchMyFiles.js";
 import sendFile from "./stages/sendFile.js";
 import { extractLink } from "./helpers.js";
+import 'dotenv/config'
 
 const localApi = process.env.BIG_FILES
   ? { telegram: { apiRoot: process.env.LOCAL_API } }
